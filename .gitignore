@@ -3,7 +3,9 @@ build
 src/*.user
 src/_Resharper*
 src/*.resharper*
+src/*/*.resharper*
 src/*.suo
+src/*/*.suo
 src/*.sln.cache
 src/*.gpState
 
