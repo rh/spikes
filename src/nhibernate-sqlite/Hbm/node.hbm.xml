@@ -1,10 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping assembly="test" namespace="Spikes.Model" xmlns="urn:nhibernate-mapping-2.2">
-	<class name="Test" table="test">
+	<class name="Node" table="nodes">
 		<id name="Id" column="id" type="System.Guid" access="nosetter.camelcase" unsaved-value="00000000-0000-0000-0000-000000000000">
 			<generator class="guid.comb" />
 		</id>
 		<version name="Version" column="version" access="nosetter.camelcase" unsaved-value="undefined" />
+		<many-to-one name="Parent" class="Node" column="parent_id" cascade="save-update" fetch="select" />
+		<list name="Children" access="nosetter.camelcase" cascade="all-delete-orphan" lazy="true" fetch="select" batch-size="100">
+			<key column="parent_id" />
+			<index column="idx" />
+			<one-to-many class="Node" />
+		</list>
+		<property name="Idx" column="idx" access="nosetter.camelcase" not-null="true" />
 		<property name="Name" column="name" not-null="true" />
 	</class>
 </hibernate-mapping>
