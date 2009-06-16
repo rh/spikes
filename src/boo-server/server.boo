@@ -1,6 +1,7 @@
 # Compile with booc -t:exe server.boo #=> server.exe
 
 import System
+import System.IO
 import System.Net
 import System.Text
 import System.Threading
@@ -33,8 +34,17 @@ class Server:
     try:
       context = cast(HttpListenerContext, request)
       print context.Request.RawUrl
-      context.Response.StatusCode = cast(int, HttpStatusCode.OK)
-      bytes = Encoding.UTF8.GetBytes(context.Request.RawUrl)
+
+      filename = Path.GetFileName(context.Request.RawUrl)
+      path = Path.Combine(Environment.CurrentDirectory, filename)
+
+      bytes = Encoding.UTF8.GetBytes("File not found.")
+      context.Response.StatusCode = cast(int, HttpStatusCode.NotFound)
+
+      if (File.Exists(path)):
+        bytes = File.ReadAllBytes(path)
+        context.Response.StatusCode = cast(int, HttpStatusCode.OK)
+
       context.Response.ContentLength64 = bytes.Length
       using stream = context.Response.OutputStream:
         stream.Write(bytes, 0, bytes.Length)
