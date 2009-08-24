@@ -16,6 +16,7 @@ namespace Spikes
 			try
 			{
 				Dictionary<string, string> properties = new Dictionary<string, string>();
+				properties[Environment.ProxyFactoryFactoryClass] = "NHibernate.ByteCode.Castle.ProxyFactoryFactory, NHibernate.ByteCode.Castle";
 				properties[Environment.ConnectionDriver] = "NHibernate.Driver.SQLite20Driver";
 				properties[Environment.Dialect] = "NHibernate.Dialect.SQLiteDialect";
 				properties[Environment.ConnectionProvider] = "NHibernate.Connection.DriverConnectionProvider";
@@ -23,14 +24,13 @@ namespace Spikes
 				properties[Environment.QuerySubstitutions] = "true=1;false=0";
 				properties[Environment.ReleaseConnections] = "on_close";
 				properties[Environment.BatchSize] = "1000";
-				//properties[Environment.ShowSql] = "true";
 
 				Configuration cfg = new Configuration();
 				cfg.Properties = properties;
 				cfg.AddAssembly(typeof(Node).Assembly);
 
 				Console.WriteLine();
-				new SchemaExport(cfg).Execute(true, true, false, true);
+				new SchemaExport(cfg).Execute(true, true, false);
 				Console.WriteLine();
 
 				const int StatelessCount = 100000;
