@@ -1,35 +1,44 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Spikes.Model
 {
+	[DebuggerDisplay("Name = {Name}")]
 	public class Node
 	{
-		protected Node()
+		public static int Count;
+
+		public Node()
 		{
 		}
 
 		public Node(string name)
 		{
+			Count++;
 			this.name = name;
 		}
 
-#pragma warning disable 649
 		private Guid id;
-#pragma warning restore 649
 
 		public virtual Guid Id
 		{
 			get { return id; }
 		}
 
-#pragma warning disable 649
 		private int version;
-#pragma warning restore 649
 
 		public virtual int Version
 		{
 			get { return version; }
+		}
+
+		private Node root;
+
+		public virtual Node Root
+		{
+			get { return root; }
+			set { root = value; }
 		}
 
 		private Node parent;
@@ -40,12 +49,11 @@ namespace Spikes.Model
 			set { parent = value; }
 		}
 
-#pragma warning disable FieldCouldBeMadeReadOnly
 		private IList<Node> children = new List<Node>();
-#pragma warning restore FieldCouldBeMadeReadOnly
 
 		public virtual IList<Node> Children
 		{
+			[DebuggerStepThrough]
 			get { return children; }
 		}
 
@@ -55,9 +63,7 @@ namespace Spikes.Model
 			children.Add(node);
 		}
 
-#pragma warning disable 649
 		private long idx;
-#pragma warning restore 649
 
 		public virtual long Idx
 		{
