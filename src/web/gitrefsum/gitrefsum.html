@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>Home</title>
+	<style type="text/css" media="screen">
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  margin: 10px 0 0 40px;
+  font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
+  font-size: 12px;
+}
+a {
+  font-family: "Courier New";
+  text-decoration: none;
+	color: blue;
+}
+a:hover {
+  color: red;
+}
+ul {
+	margin-bottom: 10px;
+	list-style: none;
+}
+li {
+	padding: 2px 2px 2px 10px;
+}
+ul li ul {
+	margin-bottom: 0;
+}
+
+	</style>
+</head>
+<body>
+
+<ul>
+  <li>
+<a href="http://gitref.org/creating/#init">git init</a>: initializes a directory as a Git repository
+  </li>
+</ul>
+
+<ul>
+  <li>
+<a href="http://gitref.org/creating/#clone">git clone</a>: copy a git repository so you can add to it
+  </li>
+</ul>
+
+<ul>
+  <li>
+<a href="http://gitref.org/basic/#add">git add</a>: adds file contents to the staging area
+  </li>
+</ul>
+
+<ul>
+  <li>
+<a href="http://gitref.org/basic/#status">git status</a>: view the status of your files in the working directory and staging area (long output)
+  </li>
+  <li>
+<a href="http://gitref.org/basic/#status">git status -s</a>: view the status of your files in the working directory and staging area (short output)
+  </li>
+</ul>
+
+<ul>
+  <li>
+<a href="http://gitref.org/basic/#diff">git diff</a>: show diff of unstaged changes
+  </li>
+  <li>
+<a href="http://gitref.org/basic/#diff">git diff --cached</a>: show diff of staged changes
+  </li>
+  <li>
+<a href="http://gitref.org/basic/#diff">git diff HEAD</a>: show diff of all staged or unstaged changes
+Add --stat to the above commands to show summary of changes instead of a full diff
+  </li>
+</ul>
+
+<ul>
+  <li>
+<a href="http://gitref.org/basic/#commit">git commit -m "Message"</a>: records a snapshot of the staging area
+  </li>
+  <li>
+<a href="http://gitref.org/basic/#commit">git commit</a>: records a snapshot of the staging area. Git will open an editor for a commit message
+  </li>
+  <li>
+<a href="http://gitref.org/basic/#commit">git commit -a</a>: automatically stage all tracked, modified files before the commit
+  </li>
+</ul>
+
+<ul>
+  <li>
+<a href="http://gitref.org/basic/#reset">git reset HEAD -- (file)</a>: unstage changes that you have staged
+  </li>
+</ul>
+
+<ul>
+  <li>
+<a href="http://gitref.org/branching/#branch">git branch</a>: list your available branches
+  </li>
+  <li>
+<a href="http://gitref.org/branching/#branch">git branch (branchname)</a>: create a new branch
+  </li>
+  <li>
+<a href="http://gitref.org/branching/#branch">git checkout (branchname)</a>: switch to a new branch context
+  </li>
+  <li>
+<a href="http://gitref.org/branching/#branch">git checkout -b (branchname)</a>: create and immediately switch to a branch
+  </li>
+  <li>
+<a href="http://gitref.org/branching/#branch">git branch -d (branchname)</a>: delete a branch
+  </li>
+</ul>
+
+<ul>
+  <li>
+<a href="http://gitref.org/branching/#merge">git merge (branchname)</a>: merge a branch context into your current one
+  </li>
+</ul>
+
+<ul>
+  <li>
+<a href="http://gitref.org/branching/#log">git log</a>: show commit history of current branch
+  </li>
+  <li>
+<a href="http://gitref.org/branching/#log">git log (branchname)</a>: show commit history of branch
+  </li>
+  <li>
+<a href="http://gitref.org/branching/#log">git log --oneline</a>: show compact commit history of a branch
+  </li>
+  <li>
+<a href="http://gitref.org/branching/#log">git log --oneline --graph</a>: show compact commit history of a branch, with merge history
+  </li>
+  <li>
+<a href="http://gitref.org/branching/#log">git log --oneline (issue) ^(master)</a>: show commits that are in the issue branch, but not in the master branch
+  </li>
+  <li>
+<a href="http://gitref.org/branching/#log">git log --decorate</a>
+  </li>
+</ul>
+
+<ul>
+  <li>
+<a href="http://gitref.org/branching/#tag">git tag -a (tag)</a>: make an annotated tag
+  </li>
+</ul>
+
+</body>
+</html>
