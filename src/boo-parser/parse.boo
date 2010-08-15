@@ -1,4 +1,4 @@
-# Run with booi parse.boo -r:..\..\lib\icsharpcode.nrefactory\3.0\ICSharpCode.NRefactory.dll
+# Run with booi parse.boo -r:..\..\lib\ICSharpCode.NRefactory.dll
 
 import ICSharpCode.NRefactory
 import ICSharpCode.NRefactory.Ast
